@@ -5,7 +5,7 @@ import FooterTop from './FooterTop'
 function Home() {
     return (
         <div>
-            {/* <FooterTop/> */}
+            <FooterTop/>
             <Footer></Footer>
         </div>
     )

@@ -15,9 +15,6 @@ background-color: #F56753;
 input{
     background-color: #F56753; 
 }
-
-
-
 `
 
 function Footer() {
@@ -28,8 +25,8 @@ function Footer() {
                     <div className="row">
                         <div className="col col-1"></div>
                         <div className="col col-4">
-                            <img className="img-fluid" src={cir} className="p-2" alt="..." />
-                            <img className="img-fluid" src={main} className="p-2" alt="..." />
+                            <img className="img-fluid" src={cir} className="p-2" alt="" />
+                            <img className="img-fluid" src={main} className="p-2" alt="" />
                         </div>
                     </div>
                     <div className="row">
