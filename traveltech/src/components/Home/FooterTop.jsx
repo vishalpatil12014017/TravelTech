@@ -7,7 +7,7 @@ const Toolbar = styled.header`
     opacity:0.6
 }
 .card-img{
-    max-height:522px;
+    max-height:481px;
     opacity:1
 }
 .card-ti{
@@ -26,7 +26,7 @@ text-align: left;
 h1{
     color:white !important;
     font-weight:800;
-    opacity:1 !important
+    opacity:9 !important
 }
 
 `
