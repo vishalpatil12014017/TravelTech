@@ -217,8 +217,8 @@ line-height: 36px;
 .like{
    /* background-color: black; */
    position: absolute;
-   left: 1%;
-   top: 2%;
+   /* left: 1%;
+   top: 2%; */
 }
 .relt{
    position: relative;
