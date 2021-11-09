@@ -124,10 +124,12 @@ color: #262626;
 
 }
 .centered button{
-  border: transparent !important;
-  margin
+  /* border: transparent !important; */
+  /* margin */
 }
+
 .btnG{
+  margin-left: 32%;
   width: 132px;
   height: 48px;
   left: 583px;
@@ -138,6 +140,7 @@ color: #262626;
   background: #FFD027;
   border-radius: 40.5px;
   transform: matrix(1, 0, 0, 1, 0, 0);
+  border: transparent;
 }
 .btny{
   width: 132px;
@@ -150,6 +153,7 @@ color: #262626;
   background: #1DBA85;
   border-radius: 40.5px;
   transform: matrix(1, 0, 0, 1, 0, 0);
+  border: transparent;
 }
 .top-card img{
   opacity:0.5
@@ -210,9 +214,11 @@ line-height: 36px;
 .rtCTT a{
   color: #1DBA85;
 }
-#like{
+.like{
    /* background-color: black; */
    position: absolute;
+   left: 1%;
+   top: 2%;
 }
 .relt{
    position: relative;
@@ -235,12 +241,36 @@ line-height: 36px;
    margin: auto;
   //  border: 5px solid black;
   margin-top: 4%;
+  position: relative;
 }
 .imgDiv img{
   width: 100% !important;
   opacity: 0.5;
 }
+.centeredtt1{
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.centeredtt1 h1{
+  /* position: absolute; */
+width: 737px;
+height: 88px;
+left: 154px;
+top: 1874px;
 
+font-family: Century Gothic;
+font-style: normal;
+font-weight: bold;
+font-size: 36px;
+line-height: 44px;
+
+/* supporting/color8 */
+
+color: #FFFFFF;
+}
 
 `
 
@@ -329,7 +359,7 @@ const Showinfo = () => {
                 <div className="carousel-item active">
                   <div className="row">
                     <div className="col-3 relt1">
-                    <img id="like" src={likee} alt="" />
+                    <img className="like" src={likee} alt="" />
                       <img src={img00} className="d-block w-100" alt="..."/>
                     <br />
                     <div class="footer">
@@ -342,7 +372,9 @@ const Showinfo = () => {
                       </div>
                     </div>
                 </div>
-                    <div className="col-3"><img src={img10} className="d-block w-100" alt="..."/>
+                    <div className="col-3">
+                    <img className="like" src={likee} alt="" />
+                      <img src={img10} className="d-block w-100" alt="..."/>
                     <br />
                     <div class="footer">
                       <div className="leftCTT">
@@ -354,7 +386,7 @@ const Showinfo = () => {
                       </div>
                     </div>
                     </div>
-                    <div className="col-3"><img src={img00} className="d-block w-100" alt="..."/>
+                    <div className="col-3"><img className="like" src={likee} alt="" /><img src={img00} className="d-block w-100" alt="..."/>
                     <br />
                     <div class="footer">
                       <div className="leftCTT">
@@ -366,7 +398,7 @@ const Showinfo = () => {
                       </div>
                     </div>
                     </div>
-                    <div className="col-3"><img src={img10} className="d-block w-100" alt="..."/>
+                    <div className="col-3"><img className="like" src={likee} alt="" /><img src={img10} className="d-block w-100" alt="..."/>
                     <br />
                     <div class="footer">
                       <div className="leftCTT">
@@ -384,10 +416,10 @@ const Showinfo = () => {
                 {/* carousel-2 */}
                 <div className="carousel-item">
                   <div className="row">
-                    <div className="col-3"><img src={img00} className="d-block w-100" alt="..."/></div>
-                    <div className="col-3"><img src={img10} className="d-block w-100" alt="..."/></div>
-                    <div className="col-3"><img src={img00} className="d-block w-100" alt="..."/></div>
-                    <div className="col-3"><img src={img10} className="d-block w-100" alt="..."/></div>
+                    <div className="col-3"><img className="like" src={likee} alt="" /><img src={img00} className="d-block w-100" alt="..."/></div>
+                    <div className="col-3"><img className="like" src={likee} alt="" /><img src={img10} className="d-block w-100" alt="..."/></div>
+                    <div className="col-3"><img className="like" src={likee} alt="" /><img src={img00} className="d-block w-100" alt="..."/></div>
+                    <div className="col-3"><img className="like" src={likee} alt="" /><img src={img10} className="d-block w-100" alt="..."/></div>
                   </div>
                 </div>
                 {/* carousel-2 end*/}
@@ -409,8 +441,10 @@ const Showinfo = () => {
         {/* imgbottom */}
             <div className="imgDiv">
               <img src={photo} alt="" className="img-fluid"/>
-              <div class="centered"><h1>Travel makes one modest. You see what a
-tiny place you occupy in the world.</h1></div>
+              <div class="centeredtt1">
+                <h1>Travel makes one modest. You see what a
+                  tiny place you occupy in the world.</h1>
+                </div>
             </div>
 
         {/* imgbottom end*/}
