@@ -2,14 +2,14 @@ import React from 'react'
 import image from './Logos/1.png'
 import styled from 'styled-components'
 const Toolbar = styled.header`
-.card-img-overlay{
+.card{
     background-color:#F56753;
-    opacity:0.6
+   
 }
-.card-img{
-    max-height:481px;
-    opacity:1
+img{
+    opacity:0.5
 }
+
 .card-ti{
     max-width:550px;
     margin:3%;
@@ -26,7 +26,17 @@ text-align: left;
 h1{
     color:white !important;
     font-weight:800;
-    opacity:9 !important
+    font-size: 75px;
+    @media all and (max-width:1024px){
+        font-size: 55px;
+}
+@media all and (max-width:768px){
+        font-size: 45px;
+}
+@media all and (max-width:520px){
+        font-size: 15px;
+}
+
 }
 
 `

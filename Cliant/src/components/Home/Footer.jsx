@@ -15,6 +15,7 @@ background-color: #F56753;
 input{
     background-color: #F56753; 
 }
+
 `
 
 function Footer() {
