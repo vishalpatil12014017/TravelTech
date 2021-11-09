@@ -45,10 +45,7 @@ function FooterTop() {
         <>
             <Toolbar>
                 <div className="card text-white"  >
-
                     <img src={image} className="card-img" alt="car" />
-
-
                     <div className="card-img-overlay" >
                         <h1 className="card-ti" >2021 AAZADY CAMPERVAN EVENT</h1>
                     </div>

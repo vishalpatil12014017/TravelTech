@@ -6,6 +6,7 @@ import PlacesToVisit from './PlacesToVisit'
 import Slider from './Slider'
 
 
+
 function Home() {
     return (
         <div>

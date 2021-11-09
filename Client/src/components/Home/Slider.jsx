@@ -7,7 +7,7 @@ const SliderBar = styled.header`
     background-color:#F56753;
 }
 img{
-    opacity:0.6
+    opacity:0.6;
 }
 .carousel-item>iframe{
     margin:auto;
@@ -92,8 +92,8 @@ function Slider() {
                                     <div className="col-3"></div>
                                     <div className="col-6">
                                         <div className="carousel-inner">
-                                            <div className="carousel-item active" data-bs-interval="4000">
-                                                <iframe className="" src="https://www.youtube.com/embed/1LFEHUMbL_Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            <div className="carousel-item active" data-bs-interval="4000" >
+                                                <iframe className="" src="https://www.youtube.com/embed/1LFEHUMbL_Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
                                             </div>
                                             <div className="carousel-item" data-bs-interval="4000">
                                                 <iframe src="https://www.youtube.com/embed/ypcpFtagQYQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
