@@ -28,7 +28,7 @@ box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 .login{
   padding: 8px 16px;
-  position: absolute;
+  /* position: absolute; */
   width: 84px;
   height: 40px;
   right: 83px;
