@@ -12,9 +12,25 @@ app.use(express.json())
 
 const vehicleController = require("./controllers/vehicleController")
 
+const nameController = require("./controllers/nameController")
+
+const placeController = require("./controllers/placeController")
+
+
+
+
+
 
 //
 app.use("/vehicle", vehicleController)
+
+app.use("/name", nameController)
+
+app.use("/place", placeController )
+
+
+
+
 
 app.listen(port, async () => {
 
