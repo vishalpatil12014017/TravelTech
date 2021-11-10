@@ -5,7 +5,7 @@ import img23 from './Logos/Group3.png'
 import img24 from './Logos/Group4.png'
 function Payoptions() {
     return (
-        <div className="container my-5">
+        <div className="container my-3">
             <div className="row">
                 <div className="col">
                    <img className="rounded mx-auto d-block img-fluid" src={img21} alt="" />

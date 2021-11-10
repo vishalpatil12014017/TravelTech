@@ -8,6 +8,8 @@ import Navbar from './Navbar'
 import Showinfo from './Showinfo'
 import Experiance from './Experiance'
 import Payoptions from './Payoptions'
+import Aazadi from './Aazadi'
+
 
 
 function Home() {
@@ -15,6 +17,7 @@ function Home() {
         <div>
             <Navbar/>
             <Experiance/>
+            <Aazadi/>
             <Payoptions></Payoptions>
             {/* <Showinfo/> */}
             <PlacesToVisit/>
