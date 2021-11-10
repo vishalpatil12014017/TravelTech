@@ -6,7 +6,7 @@ function PlacesToVisit() {
      .underline{
          text-decoration:underline;
      }
-     .display-1{
+     .display-4{
          font-weight:600
 
      }

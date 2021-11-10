@@ -11,7 +11,7 @@ function Home() {
     return (
         <div>
             <Navbar/>
-            <Showinfo/>
+            {/* <Showinfo/> */}
             <PlacesToVisit/>
             <Slider/>
             <Community/>

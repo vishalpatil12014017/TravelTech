@@ -3,34 +3,43 @@ import React, { useState } from "react";
 import logo from "./Logos/Logo.svg";
 // import help from "./Images/customer.svg";
 import styled from 'styled-components'
+import group from './Logos/Group.png'
 
 
 const Nav = styled.nav`
 display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 84px;
+    height: 64px;
     background: #FFFFFF;
 box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 
 .logo{
   margin-left: 0;
 }
+ul:hover{
+   cursor: pointer;
+}
 .nav-links{
   display: flex;
   justify-content: flex-end;
   list-style: none;
-  width: 75%;
+  width: 85%;
+  padding-top:15px
 }
 .nav-links li{
   padding: 8px 16px;
   top: 40px;
 }
+.user{
+  max-height:30px;
+  padding:0px
+}
 .login{
   padding: 8px 16px;
   /* position: absolute; */
-  width: 84px;
-  height: 40px;
+  width: 104px;
+  height: 30px;
   right: 83px;
   top: 18px;
   
@@ -164,42 +173,47 @@ const Navbar = () => {
     <Nav>
       <img className="logo" alt="" src={logo} />
       <ul
-        className={isMob ? "nav-links-mobile" : "nav-links"}
-        onClick={() => setIsMob(true)}
+        className={"nav-links"}
+
       >
         <li>
-          <a className="textTT" href="/">
+          <a className="textTT" >
             HOME
           </a>
         </li>
 
         <li>
-          <a className="textTT" href="/">
+          <a className="textTT" >
             ABOUT US
           </a>
         </li>
 
         <li>
-          <a className="textTT" href="/">
+          <a className="textTT" >
             COMMUNITY
           </a>
         </li>
 
         <li>
-          <a className="textTT" href="/">
+          <a className="textTT" >
             BLOG
           </a>
         </li>
 
         <li>
-          <a className="login" href="/">
+          <a className="login" >
             LOG IN
+          </a>
+        </li>
+        <li className="user">
+          <a className="user" >
+            <img className="logo" alt="" src={group} />
           </a>
         </li>
         {/* <li>
                 <img className="custo" alt="" src={help}/>
                 </li> */}
-        <button className="mobile-menu-icon" onClick={() => setIsMob(!isMob)}>
+        <button className="mobile-menu-icon text-white" onClick={() => setIsMob(!isMob)}>
           {isMob ? (
             <i className="fas fa-times"></i>
           ) : (
