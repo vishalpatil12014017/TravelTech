@@ -9,7 +9,7 @@ import Showinfo from './Showinfo'
 import Experiance from './Experiance'
 import Payoptions from './Payoptions'
 import Aazadi from './Aazadi'
-
+import Carousel from './Carousel'
 
 
 function Home() {
@@ -17,8 +17,10 @@ function Home() {
         <div>
             <Navbar/>
             <Experiance/>
+            <Payoptions/>
             <Aazadi/>
-            <Payoptions></Payoptions>
+           
+            <Carousel/>
             {/* <Showinfo/> */}
             <PlacesToVisit/>
             <Slider/>

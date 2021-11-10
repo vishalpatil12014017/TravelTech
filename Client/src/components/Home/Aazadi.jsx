@@ -21,14 +21,14 @@ button{
 border-radius: 24px;
 border:none;
 color:black;
-max-width: 350px;
+max-width: 450px;
 }
 `
 function Aazadi() {
     return (
         <ToolCard>
         <div className="container p-4">
-            <h1 className="my-5"><span className="underline">A</span>azady campervan</h1>
+            <h1 className="my-5 mt-2"><span className="underline">A</span>azady campervan</h1>
             <div className="card mb-3" >
                 <div className="row g-0">
                     <div className="col-md-5">
