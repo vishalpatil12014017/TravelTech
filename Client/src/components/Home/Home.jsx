@@ -9,6 +9,8 @@ import Experiance from './Experiance'
 import Payoptions from './Payoptions'
 import Aazadi from './Aazadi'
 import Carousel from './Carousel'
+import Travel from './Travel'
+
 import Dbdata from '../../Utils/request'
 import { useState, useEffect } from 'react';
 function Home() {
@@ -42,6 +44,7 @@ function Home() {
                 <Payoptions />
                 <Aazadi />
                 <Carousel vehicles={vehicles}/>
+                <Travel/>
                 <PlacesToVisit data={places}/>
                 <Slider />
                 <Community />
