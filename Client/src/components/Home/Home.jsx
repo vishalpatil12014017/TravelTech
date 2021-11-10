@@ -5,7 +5,6 @@ import FooterTop from './FooterTop'
 import PlacesToVisit from './PlacesToVisit'
 import Slider from './Slider'
 import Navbar from './Navbar'
-import Showinfo from './Showinfo'
 import Experiance from './Experiance'
 import Payoptions from './Payoptions'
 import Aazadi from './Aazadi'
@@ -19,9 +18,7 @@ function Home() {
             <Experiance/>
             <Payoptions/>
             <Aazadi/>
-           
             <Carousel/>
-            {/* <Showinfo/> */}
             <PlacesToVisit/>
             <Slider/>
             <Community/>
