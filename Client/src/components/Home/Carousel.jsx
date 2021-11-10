@@ -10,6 +10,21 @@ const Carou = styled.header`
 .card-img-top{
     position:relative
 }
+.card-body{
+    @media all and (max-width:768px){
+       
+       font-size:8px;
+       padding-left:0px;
+       padding-right:0px;
+       
+   } 
+   @media all and (max-width:524px){
+       
+       font-size:6px;
+       padding-left:0px;
+       padding-right:0px;
+   } 
+}
 a{
     text-decoration:none;
     color:black;
@@ -19,16 +34,39 @@ a{
     } 
     @media all and (max-width:768px){
        
-       font-size:10px;
+       font-size:8px;
+       padding-left:0px;
+       padding-right:0px
+   } 
+   @media all and (max-width:768px){
+       
+       font-size:6px;
+       padding-left:0px;
+       padding-right:0px
    } 
     
 }
+.card-text{
+    @media all and (max-width:768px){
+       padding-top:0px;
+       
+   } 
+   @media all and (max-width:524px){
+       padding-top:0px;
+   } 
+
+}
+.card-text:hover{
+    cursor: pointer;
+}
 .text-end{
     text-decoration:underline;
-    color:#1DBA85
+    color:#1DBA85;
+    
 }
+
 `
-function Carousel() {
+function Carousel({vehicles}) {
     return (
         <Carou>
             <div className="container">
@@ -38,46 +76,20 @@ function Carousel() {
                         {/* carousel-1 */}
                         <div className="carousel-item active">
                             <div className="row">
-                                <div className="col col-3 px-1 py-3">
-                                    <div className="card border-0" >
-                                        <img src={img10} className="card-img-top" alt="..." />
-                                        <img className="like" src={likee} alt="" />
-                                        <div className="card-body">
-                                            <a className="card-title h4">Card title</a>
-                                            <a className="card-text text-end float-end">READ MORE</a>
+                                {
+                                    vehicles.map((e) => (
+                                        <div key={e._id} className="col col-3 px-1 py-3">
+                                            <div className="card border-0" >
+                                                <img src={e.image_main_url} className="card-img-top" alt="..." />
+                                                <img className="like" src={likee} alt="" />
+                                                <div className="card-body">
+                                                    <a className="card-title h4">{e.vehicle_name}</a>
+                                                    <a className="card-text text-end float-end">READ MORE</a>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                               <div className="col col-3 px-1 py-3">
-                                    <div className="card border-0" >
-                                        <img src={img10} className="card-img-top" alt="..." />
-                                        <img className="like" src={likee} alt="" />
-                                        <div className="card-body">
-                                            <a className="card-title h4">Card title</a>
-                                            <a className="card-text text-end float-end">READ MORE</a>
-                                        </div>
-                                    </div>
-                                </div>
-                               <div className="col col-3 px-1 py-3">
-                                    <div className="card border-0" >
-                                        <img src={img10} className="card-img-top" alt="..." />
-                                        <img className="like" src={likee} alt="" />
-                                        <div className="card-body">
-                                            <a className="card-title h4">Card title</a>
-                                            <a className="card-text text-end float-end">READ MORE</a>
-                                        </div>
-                                    </div>
-                                </div>
-                               <div className="col col-3 px-1 py-3">
-                                    <div className="card border-0" >
-                                        <img src={img10} className="card-img-top" alt="..." />
-                                        <img className="like" src={likee} alt="" />
-                                        <div className="card-body">
-                                            <a className="card-title h4">Card title</a>
-                                            <a className="card-text text-end float-end">READ MORE</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                    ))
+                                }
                             </div>
                         </div>
 

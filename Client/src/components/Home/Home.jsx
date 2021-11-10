@@ -9,23 +9,46 @@ import Experiance from './Experiance'
 import Payoptions from './Payoptions'
 import Aazadi from './Aazadi'
 import Carousel from './Carousel'
-
-
+import Dbdata from '../../Utils/request'
+import { useState, useEffect } from 'react';
 function Home() {
-    return (
-        <div>
-            <Navbar/>
-            <Experiance/>
-            <Payoptions/>
-            <Aazadi/>
-            <Carousel/>
-            <PlacesToVisit/>
-            <Slider/>
-            <Community/>
-            <FooterTop/>
-            <Footer/>
-        </div>
-    )
-}
+    const [places, setPlaces] = useState([]);
+    const [vehicles, setVehicles] = useState([]);
+    const getPlacedata=()=>{
+        Dbdata.get("place")
+        .then(({data})=>{
+            setPlaces(data.place)
+            return;
+        })
+        
+    }
+    const getdata=()=>{
+        Dbdata.get("vehicle")
+        .then(({data})=>{
+            setVehicles(data.vehicle)
+            return;
+        })
+        
+    }
+    console.log(vehicles)
+    useEffect(() => {
+       getPlacedata()
+       getdata()
+    }, [])
+        return (
+            <div>
+                <Navbar />
+                <Experiance />
+                <Payoptions />
+                <Aazadi />
+                <Carousel vehicles={vehicles}/>
+                <PlacesToVisit data={places}/>
+                <Slider />
+                <Community />
+                <FooterTop />
+                <Footer />
+            </div>
+        )
+    }
 
-export default Home
+    export default Home
