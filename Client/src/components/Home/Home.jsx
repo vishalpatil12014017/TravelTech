@@ -6,11 +6,13 @@ import PlacesToVisit from './PlacesToVisit'
 import Slider from './Slider'
 import Navbar from './Navbar'
 import Showinfo from './Showinfo'
+import Experiance from './Experiance'
 
 function Home() {
     return (
         <div>
             <Navbar/>
+            <Experiance/>
             {/* <Showinfo/> */}
             <PlacesToVisit/>
             <Slider/>
