@@ -95,7 +95,7 @@ function Carousel({vehicles}) {
                                         <div key={e._id} className="col col-3 px-1 py-3">
                                             <div className="card border-0" >
                                                 <img src={e.image_main_url} className="card-img-top" alt="..." />
-                                                <img className="like" src={e.likeStatus ? vector:likee} alt="" onClick={()=>{
+                                                <img className="like img-fluid" src={e.likeStatus ? vector:likee} alt="" onClick={()=>{
                                                     handlecolor(e._id)
                                                 }} />
 
@@ -117,7 +117,7 @@ function Carousel({vehicles}) {
                         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span className="visually-hidden">Next</span>
                     </button>
-                    <button className="carousel-control-prev btnTT" style={{maxWidth:"20px"}} type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <button className="carousel-control-prev btnTT " style={{maxWidth:"20px"}} type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                         <span className="carousel-control-next-icon" aria-hidden="true"></span>
                         <span className="visually-hidden">Previous</span>
                     </button>
