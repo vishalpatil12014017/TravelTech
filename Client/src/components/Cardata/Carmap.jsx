@@ -36,6 +36,9 @@ h5{
 .carousel-item img{
  max-height:430px
 }
+.btnn{
+    background-color:#1DBA85
+}
 `
 function Carmap({ vehicles }) {
     console.log(vehicles, "vi")
@@ -71,7 +74,7 @@ function Carmap({ vehicles }) {
                                 </div>
                                 <div className="col-xl-8">
                                     <div className="card-body ps-4">
-                                        <h5 className="mb-5">{e.vehicle_name}<span className="float-end">{e.vehicle_rate}</span></h5>
+                                        <h5 className="mb-4">{e.vehicle_name}<span className="float-end">{e.vehicle_rate}</span></h5>
                                         <small className="fs-5">Vehicle description</small>
                                         <p className="card-text my-5 des mt-2">{e.vehicle_description}</p>
                                         <div className="row mt-5 px-1">
@@ -124,7 +127,7 @@ function Carmap({ vehicles }) {
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="button" class="btn btn-success float-end px-4">continue</button>
+                                        <button type="button" class="btn btnn float-end px-4">continue</button>
                                     </div>
                                 </div>
                             </div>

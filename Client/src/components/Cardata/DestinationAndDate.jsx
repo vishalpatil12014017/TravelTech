@@ -30,7 +30,7 @@ label{
     padding-left:33%
 }
 `
-function DestinationAndDate() {
+function DestinationAndDate({ handleChange }) {
     return (
         <Date>
             <div className="container py-5">
@@ -47,29 +47,29 @@ function DestinationAndDate() {
                                         <label for="basic-url" className="form-label sec mb-0">TO</label>
                                         <div className="input-group">
                                             {/* <input type="className=" className="form-control border-0" id="basic-url" aria-describedby="basic-addon3" placeholder="Where to start" /> */}
-                                            <select class="form-select border-0" aria-label="Default select example">
+                                            <select class="form-select border-0" aria-label="Default select example" onChange={handleChange} name="StartingPoing">
                                                 <option selected>Where to start</option>
-                                                <option value="1">PUNE</option>
-                                                <option value="2">Bangalore</option>
-                                                <option value="3">Delhi</option>
-                                                <option value="4">Gurgaon</option>
-                                                <option value="5">Mumbai</option>
-                                                <option value="6">Kolkata</option>
-                                                <option value="7">Hyderabad</option>
-                                                <option value="8">Ahmedabad</option>
-                                                <option value="9">Chennai</option>
+                                                <option value="PUNE">PUNE</option>
+                                                <option value="Bangalore">Bangalore</option>
+                                                <option value="Delhi">Delhi</option>
+                                                <option value="Gurgaon">Gurgaon</option>
+                                                <option value="Mumbai">Mumbai</option>
+                                                <option value="Kolkata">Kolkata</option>
+                                                <option value="Hyderabad">Hyderabad</option>
+                                                <option value="Ahmedabad">Ahmedabad</option>
+                                                <option value="Chennai">Chennai</option>
                                             </select>
-                                            <select class="form-select border-0" aria-label="Default select example">
+                                            <select class="form-select border-0" aria-label="Default select example" onChange={handleChange} name="EndingPoing">
                                                 <option selected>Where to end</option>
-                                                <option value="1">PUNE</option>
-                                                <option value="2">Bangalore</option>
-                                                <option value="3">Delhi</option>
-                                                <option value="4">Gurgaon</option>
-                                                <option value="5">Mumbai</option>
-                                                <option value="6">Kolkata</option>
-                                                <option value="7">Hyderabad</option>
-                                                <option value="8">Ahmedabad</option>
-                                                <option value="9">Chennai</option>
+                                                <option value="PUNE">PUNE</option>
+                                                <option value="Bangalore">Bangalore</option>
+                                                <option value="Delhi">Delhi</option>
+                                                <option value="Gurgaon">Gurgaon</option>
+                                                <option value="Mumbai">Mumbai</option>
+                                                <option value="Kolkata">Kolkata</option>
+                                                <option value="Hyderabad">Hyderabad</option>
+                                                <option value="Ahmedabad">Ahmedabad</option>
+                                                <option value="Chennai">Chennai</option>
                                             </select>
                                             {/* <input type="className=" className="form-control border-0" id="basic-url" aria-describedby="basic-addon3" placeholder="Where to end" /> */}
                                         </div>
@@ -89,8 +89,8 @@ function DestinationAndDate() {
                                         <label for="basic-url" className="form-label mb-0 ps-3">START DATE</label>
                                         <label for="basic-url" className="form-label sec sec1 mb-0">END DATE</label>
                                         <div className="input-group">
-                                            <input type="date" className="form-control border-0" id="basic-url" aria-describedby="basic-addon3" placeholder="Where to start" />
-                                            <input type="date" className="form-control border-0" id="basic-url" aria-describedby="basic-addon3" placeholder="Where to end" />
+                                            <input type="date" className="form-control border-0" id="basic-url" aria-describedby="basic-addon3" placeholder="Where to start" onChange={handleChange} name="StartingDate" />
+                                            <input type="date" className="form-control border-0" id="basic-url" aria-describedby="basic-addon3" placeholder="Where to end" onChange={handleChange} name="EndingDate" />
                                         </div>
                                     </div>
                                 </div>
