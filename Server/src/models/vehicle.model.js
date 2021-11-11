@@ -38,6 +38,7 @@ const vehicleSchema = new mongoose.Schema({
     festival_friendly_description:  {type:String,  required: false},
     pet_allowed:  {type:String,  required: false},
     pet_allowed_description:  {type:String,  required: false},
+    likeStatus:{type:Boolean,  required: false,default:false},
 
 },
 {

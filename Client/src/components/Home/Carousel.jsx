@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import likee from './Logos/likeee.png'
-import img10 from './Logos/UDAIPUR.png'
+import vector from './Logos/Vector.png'
+import { useState } from 'react'
 const Carou = styled.header`
 .like{
     position:absolute;
@@ -67,6 +68,19 @@ a{
 
 `
 function Carousel({vehicles}) {
+    const [data,setData]=useState([])
+    const [id,setId]=useState([])
+    const handlecolor=(id)=>{
+        const updated=vehicles.filter((e)=>{
+            console.log(e)
+            if(e._id===id){
+                e.likeStatus=!e.likeStatus
+            }
+            return e;
+        })
+        setData(updated)
+    }
+  
     return (
         <Carou>
             <div className="container">
@@ -81,7 +95,10 @@ function Carousel({vehicles}) {
                                         <div key={e._id} className="col col-3 px-1 py-3">
                                             <div className="card border-0" >
                                                 <img src={e.image_main_url} className="card-img-top" alt="..." />
-                                                <img className="like" src={likee} alt="" />
+                                                <img className="like" src={e.likeStatus ? vector:likee} alt="" onClick={()=>{
+                                                    handlecolor(e._id)
+                                                }} />
+
                                                 <div className="card-body">
                                                     <a className="card-title h4">{e.vehicle_name}</a>
                                                     <a className="card-text text-end float-end">READ MORE</a>
@@ -100,7 +117,7 @@ function Carousel({vehicles}) {
                         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span className="visually-hidden">Next</span>
                     </button>
-                    <button className="carousel-control-prev btnTT" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <button className="carousel-control-prev btnTT" style={{maxWidth:"20px"}} type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                         <span className="carousel-control-next-icon" aria-hidden="true"></span>
                         <span className="visually-hidden">Previous</span>
                     </button>
