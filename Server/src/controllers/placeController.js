@@ -23,7 +23,7 @@ router.get("", async(req, res) => {
 })
 
 
-//patch requests
+//patch request
 
 router.patch("/:id", async(req, res) => {
     const place = await Place.findByIdAndUpdate(req.params.id, req.body)
