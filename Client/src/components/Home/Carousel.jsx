@@ -72,7 +72,6 @@ function Carousel({vehicles}) {
     const [id,setId]=useState([])
     const handlecolor=(id)=>{
         const updated=vehicles.filter((e)=>{
-            console.log(e)
             if(e._id===id){
                 e.likeStatus=!e.likeStatus
             }

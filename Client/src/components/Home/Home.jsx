@@ -10,33 +10,7 @@ import Payoptions from './Payoptions'
 import Aazadi from './Aazadi'
 import Carousel from './Carousel'
 import Travel from './Travel'
-
-import Dbdata from '../../Utils/request'
-import { useState, useEffect } from 'react';
-function Home() {
-    const [places, setPlaces] = useState([]);
-    const [vehicles, setVehicles] = useState([]);
-    const getPlacedata=()=>{
-        Dbdata.get("place")
-        .then(({data})=>{
-            setPlaces(data.place)
-            return;
-        })
-        
-    }
-    const getdata=()=>{
-        Dbdata.get("vehicle")
-        .then(({data})=>{
-            setVehicles(data.vehicle)
-            return;
-        })
-        
-    }
-    console.log(vehicles)
-    useEffect(() => {
-       getPlacedata()
-       getdata()
-    }, [])
+function Home({vehicles,places}) {
         return (
             <div>
                 <Navbar />
