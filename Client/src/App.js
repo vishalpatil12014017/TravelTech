@@ -30,9 +30,9 @@ function App() {
   return (
 
     <>
-      {/* <Home vehicles={vehicles} places={places}></Home> */}
-      {/* <CarData vehicles={vehicles}/> */}
-      <SingleCar vehicles={vehicles} />
+      <Home vehicles={vehicles} places={places}></Home>
+      {/* <CarData vehicles={vehicles}/>
+      <SingleCar vehicles={vehicles} /> */}
 
     </>
   );
