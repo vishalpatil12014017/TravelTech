@@ -5,6 +5,7 @@ import Dbdata from './Utils/request'
 import { useState, useEffect } from 'react';
 import SingleCar from './components/SingleCar/SingleCar';
 import Payment from './components/Payment/Payment'
+import { Signup } from "./components/Signup/SignUp";
 function App() {
   const [places, setPlaces] = useState([]);
   const [vehicles, setVehicles] = useState([]);
@@ -29,13 +30,12 @@ function App() {
     getdata()
   }, [])
   return (
-
     <>
-      <Home vehicles={vehicles} places={places}></Home>
+      {/* <Home vehicles={vehicles} places={places}></Home> */}
       {/* <CarData vehicles={vehicles}/> */}
       {/* <SingleCar vehicles={vehicles} /> */}
       {/* <Payment/> */}
-
+      <Signup></Signup>
     </>
   );
 }
