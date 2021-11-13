@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
+import { useParams } from 'react-router'
 import DestinationAndDate from '../Cardata/DestinationAndDate'
 import Services from '../Cardata/Services'
-import Navbar from '../Home/Navbar'
-import Carinfo from './Carinfo'
+import Carinfo from './Carinfo';
 
-function SingleCar({ vehicles }) {
+
+function SingleCar({ vehicles ,id}) {
+    const [params, setParams] = useState(useParams())
+    
+    console.log(params)
     const [formdata, setFormdata] = useState({
         EndingDate: "",
         EndingPoing: "",
@@ -19,13 +23,12 @@ function SingleCar({ vehicles }) {
             [name]: value,
         })
     };
-    // console.log(formdata)
+   
     return (
         <>
-            <Navbar />
             <DestinationAndDate handleChange={handleChange} />
             <Services />
-            <Carinfo vehicles={vehicles} formdata={formdata} />
+            <Carinfo vehicles={vehicles} formdata={formdata} id={params._id} />
         </>
     )
 }

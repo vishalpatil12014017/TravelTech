@@ -10,14 +10,30 @@ import Payoptions from './Payoptions'
 import Aazadi from './Aazadi'
 import Carousel from './Carousel'
 import Travel from './Travel'
+import { useState } from 'react'
 function Home({vehicles,places}) {
+    const [formdata, setFormdata] = useState({
+        EndingDate: "",
+        EndingPoing: "",
+        StartingDate: "",
+        StartingPoing: "",
+
+    })
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormdata({
+            ...formdata,
+            [name]: value,
+        })
+    };
+   
+
         return (
             <div>
-                <Navbar />
-                <Experiance />
+                <Experiance handleChange={handleChange}/>
                 <Payoptions />
                 <Aazadi />
-                <Carousel vehicles={vehicles}/>
+                <Carousel vehicles={vehicles} />
                 <Travel/>
                 <PlacesToVisit data={places}/>
                 <Slider />

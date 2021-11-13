@@ -1,9 +1,12 @@
 // rafce
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "./Logos/Logo.svg";
 // import help from "./Images/customer.svg";
 import styled from 'styled-components'
 import group from './Logos/Group.png'
+import { Signup } from "../Signup/SignUp";
+import { Link } from "react-router-dom";
+
 
 
 const Nav = styled.nav`
@@ -12,11 +15,18 @@ display: flex;
     align-items: center;
     height: 64px;
     background: #FFFFFF;
-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+box-shadow: 0px 2px 8px rgba(153, 108, 108, 0.1);
 
 .logo{
   margin-left: 0;
+ 
 }
+.logo1{
+  max-width:50px;
+  max-height:50px;
+  border-radius:20px
+}
+
 ul:hover{
    cursor: pointer;
 }
@@ -32,7 +42,7 @@ ul:hover{
   top: 40px;
 }
 .user{
-  max-height:30px;
+  max-height:10px;
   padding:0px
 }
 .login{
@@ -169,59 +179,83 @@ ul:hover{
 
 const Navbar = () => {
   const [isMob, setIsMob] = useState(false);
+  const [profile, setProfile] = useState("")
+  const [login, setLogin] = useState(true)
+  const handleurl = (e) => {
+    setProfile(e)
+   
+  }
+  useEffect(() => {
+    handleurl()
+  }, [])
+
+
   return (
-    <Nav>
-      <img className="logo" alt="" src={logo} />
-      <ul
-        className={"nav-links"}
+    <>
+      <Nav>
+        <img className="logo" alt="" src={logo} />
+        <ul
+          className={"nav-links"}
 
-      >
-        <li>
-          <a className="textTT" >
-            HOME
-          </a>
-        </li>
+        >
+          <li>
+            <Link to="/Home" style={{ textDecoration: "none" }}>
+              <a className="textTT" >
+                HOME
+              </a>
+            </Link>
+          </li>
 
-        <li>
-          <a className="textTT" >
-            ABOUT US
-          </a>
-        </li>
+          <li>
+            <a className="textTT" >
+              ABOUT US
+            </a>
+          </li>
 
-        <li>
-          <a className="textTT" >
-            COMMUNITY
-          </a>
-        </li>
+          <li>
+            <a className="textTT" >
+              COMMUNITY
+            </a>
+          </li>
 
-        <li>
-          <a className="textTT" >
-            BLOG
-          </a>
-        </li>
+          <li>
+            <a className="textTT" >
+              BLOG
+            </a>
+          </li>
 
-        <li>
-          <a className="login" >
-            LOG IN
-          </a>
-        </li>
-        <li className="user">
-          <a className="user" >
-            <img className="logo" alt="" src={group} />
-          </a>
-        </li>
-        {/* <li>
-                <img className="custo" alt="" src={help}/>
-                </li> */}
-        <button className="mobile-menu-icon text-white" onClick={() => setIsMob(!isMob)}>
-          {isMob ? (
-            <i className="fas fa-times"></i>
-          ) : (
-            <i className="fas fa-bars"></i>
-          )}
-        </button>
-      </ul>
-    </Nav>
+          <li>
+            {
+              login ? 
+                <a className="login" data-bs-toggle="modal" href="#exampleModalToggle" role="button" onClick={() => {
+                  setLogin(false)
+                }}>
+                LOG IN
+              </a> : <a className="login" role="button" onClick={() => {
+                setLogin(true)
+                setProfile(group)
+              }}>
+                LOG OUT
+              </a>
+              
+            }
+          </li>
+          <li className="user">
+            <a className="user" >
+              <img className="logo1" alt="" src={!profile ? group : profile} />
+            </a>
+          </li>
+          <button className="mobile-menu-icon text-white" onClick={() => setIsMob(!isMob)}>
+            {isMob ? (
+              <i className="fas fa-times"></i>
+            ) : (
+              <i className="fas fa-bars"></i>
+            )}
+          </button>
+        </ul>
+      </Nav>
+      <Signup handleurl={handleurl}></Signup>
+    </>
   );
 };
 

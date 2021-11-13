@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import likee from './Logos/likeee.png'
 import vector from './Logos/Vector.png'
 import { useState } from 'react'
+import SingleCar from '../SingleCar/SingleCar'
+import { Link } from 'react-router-dom'
 const Carou = styled.header`
 .like{
     position:absolute;
@@ -100,7 +102,7 @@ function Carousel({vehicles}) {
 
                                                 <div className="card-body">
                                                     <a className="card-title h4">{e.vehicle_name}</a>
-                                                    <a className="card-text text-end float-end">READ MORE</a>
+                                                    <Link to={`/singlecar/${e._id}`}><a className="card-text text-end float-end" >READ MORE</a></Link>
                                                 </div>
                                             </div>
                                         </div>

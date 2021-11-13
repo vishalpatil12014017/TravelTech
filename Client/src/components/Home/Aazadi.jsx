@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import img01 from './Logos/van.jpg'
+import { Link } from 'react-router-dom'
 const ToolCard = styled.header`
 h1{
     font-family: Poppins;
@@ -23,6 +24,9 @@ border:none;
 color:black;
 max-width: 450px;
 }
+button:hover{
+    background-color:#000000
+}
 `
 function Aazadi() {
     return (
@@ -39,7 +43,9 @@ function Aazadi() {
 
                             <p className="card-text fs-6">Aliquip et amet magna ullamco proident sunt Lorem ipsum do consequat id quis. Dolore irure laboris occaecat deserunt aliqua non enim anim incididunt tempor ipsum veniam duis. Sunt adipisicing culpa excepteur eiusmod ad nostrud deserunt tempor voluptate. Tempor pariatur mollit sunt pariatur. Mollit cupidatat nostrud ad et magna elit excepteur dolore qui eu.</p>
                             <div className="d-grid gap-2 col-5 mx-auto mt-5">
+                                <Link to="/cardata" style={{textDecoration:"none"}}>
                                 <button className="btn btn-primary mt-2" type="button">BOOK YOUR AAZADY</button>
+                                </Link>
                             </div>
                         </div>
                     </div>

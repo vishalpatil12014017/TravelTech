@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 const Map = styled.header`
 .card{
     background-color:#F4F4F4;
@@ -127,7 +128,8 @@ function Carmap({ vehicles }) {
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="button" class="btn btnn float-end px-4">continue</button>
+                                        <Link to={`/singlecar/${e._id}`}> <button type="button" className="btn btnn float-end px-4">continue</button></Link>
+                                       
                                     </div>
                                 </div>
                             </div>

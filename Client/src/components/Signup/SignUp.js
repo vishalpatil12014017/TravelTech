@@ -1,53 +1,170 @@
 import { useState } from "react";
-import "./signup.css";
 import GoogleLogin from "react-google-login";
 import FacebookLogin from "react-facebook-login";
+import styled from 'styled-components'
+const Popup = styled.header`
 
-function Signup() {
-   const responseGoogle = (response) => {
-     console.log(response);
-    };
-    
-    const responseFacebook = (response) => {
-      console.log(response);
-    };
+.modal-tit{
+  color:#F56753;
+  font-size:3.4vw;
+  text-align:center;
+  margin-left:33%;
+  margin-bottom:0px
+}
+.modal-dialog{
+  max-width:40%;
+  border-radius:20px
+}
+.btn-close{
+  color:white;
+  background-color:#F56753;
+  border-radius:25px
+}
+small{
+ color:#F56753;
+}
+.mob{
+  max-width:300px;
+  text-align:center;
+  margin:auto;
+  border:none;
+ 
+}
+span{
+  background-color:white;
+  border:none;
+  border-radius:0px;
+  border-bottom:3px solid #F56753
+}
+input{
+  
+  outline:none !important;
+  box-shadow:none!important;
+  transition:none!important;
+  border:none;
+  border-bottom:3px solid #F56753 !important;
+  border-radius:0px;
+}
+.btn-outline-success{
+ margin:auto;
+ background-color:#E5E5E5;
+ outline:none !important;
+  box-shadow:none!important;
+  transition:none!important;
+  color:black
+
+}
+.btn-outline-success:hover{
+  background-color:#1DBA85;
+
+}
+.auth{
+  margin:auto
+}
+.modal-content{
+  background-color:rgb(250,236,234);
+}
+`
+
+function Signup({handleurl}) {
+  const [image, setImage] = useState({})
+  const responseGoogle = (response) => {
+    handleurl(response.profileObj.imageUrl)
+  };
+
+  const responseFacebook = (response) => {
+    console.log(response);
+  };
+ 
+  var random=Math.floor(Math.random(4)*10000)
+  const handleotp=()=>{
+    alert(random)
+  }
+  const checkotp=(e)=>{
+    console.log(e.target.value)
+    console.log(random)
+   setTimeout(()=>{
+    if(e.target.value==random){
+      alert("Login Sucessful")
+    }
+    else{
+      alert("Login Unsucessful")
+    }
+   },4000)
+  }
   return (
-    <div className="mainDiv">
-      <div className="join">JOIN US</div>
-      <div className="exp">Explore the freedom</div>
-      <div className="ip">
-        <span>+91</span>
-        <input className="phone" placeholder="Enter your phone number "  />
+    <Popup>
+      <div className="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header py-0 border-0">
+              <h5 className="modal-tit text-center mt-3" id="exampleModalToggleLabel">JOIN US</h5>
+              <button type="button" className="btn-close p-2" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <small className="text-center">Explore the freedom</small>
+            <div className="input-group my-3 mob mb-4">
+              <span className="input-group-text" id="basic-addon1">+91</span>
+              <input type="text" className="form-control" placeholder="Enter your phone number" aria-label="Username" aria-describedby="basic-addon1" maxLength="10" minLength="10" required />
+            </div>
+            <button type="button" className="btn btn-outline-success px-5 py-1" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal" onClick={handleotp}>Get OTP</button>
+            <p className="text-center pt-2">Or</p>
+            <div className="auth mb-3" data-bs-dismiss="modal" aria-label="Close">
+              <GoogleLogin
+                clientId="154743955779-puie7227q9rv09vk3ncbuorg2uq9rteu.apps.googleusercontent.com"
+                buttonText="Sign up with google"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={"single_host_origin"}
+                 />
+            </div>
+            <div className="auth mb-5" data-bs-dismiss="modal" aria-label="Close">
+              <FacebookLogin
+                appId="481770656419917"
+                autoLoad={true}
+                fields="name,email,picture"
+                callback={responseFacebook}
+              />
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="line"></div>
-      <div className="ot">
-        <div className="otp">GET OTP</div>
+      <div className="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header py-0 border-0">
+              <h5 className="modal-tit text-center mt-3" id="exampleModalToggleLabel">JOIN US</h5>
+              <button type="button" className="btn-close p-2" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <small className="text-center">Explore the freedom</small>
+            <div className="input-group my-3 mob mb-4">
+              <input type="text" className="form-control" placeholder="Enter your OTP" aria-label="Username" aria-describedby="basic-addon1" onChange={(e)=>{
+                checkotp(e)
+              }}/>
+            </div>
+            <button type="button" className="btn btn-outline-success px-5 py-1" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal" >Enter freedom</button>
+            <p className="text-center pt-2">Or</p>
+            <div className="auth mb-3">
+              <GoogleLogin
+                clientId="154743955779-puie7227q9rv09vk3ncbuorg2uq9rteu.apps.googleusercontent.com"
+                buttonText="Sign up with google"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={"single_host_origin"}
+              />
+            </div>
+            <div className="auth mb-5">
+              <FacebookLogin
+                appId="481770656419917"
+                autoLoad={true}
+                fields="name,email,picture"
+                callback={responseFacebook}
+              />
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="or">
-        <div>or</div>
-      </div>
-      <div className="text">
-        <GoogleLogin
-          clientId="154743955779-puie7227q9rv09vk3ncbuorg2uq9rteu.apps.googleusercontent.com"
-          buttonText="Sign up with google"
-          onSuccess={responseGoogle}
-          onFailure={responseGoogle}
-          cookiePolicy={"single_host_origin"}
-        />
-      </div>
-      <div className="textcp">
-        <FacebookLogin
-          appId="481770656419917"
-          autoLoad={true}
-          fields="name,email,picture"
-          /*onClick={componentClicked}*/
-          callback={responseFacebook}
-        />
-      </div>
-      <div className="delete">
-        <button className="deleteImg" />
-      </div>
-    </div>
+      {/* <a className="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Open first modal</a> */}
+    </Popup>
   );
 };
 
