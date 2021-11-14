@@ -40,31 +40,10 @@ This Web-app is made using:
 
 ## A Quick Walkthrough:
 
-Landing Page:
-
-- Home
-- Navbar
-- 
-- For Enterprises
-
-page afer filling form on home.html:
-
-- Estimate
-
-Pages user can see after log in on Drivers & Partners:
-
-- User History
-- User Wallet
-
-Dummy User Details:
-- Demo Id: dheerajbisht362@gmail.com
-- Demo Password: 123456
-
-
 
 ## Demo
 
-![Logo](https://upload.wikimedia.org/wikipedia/commons/e/eb/Porter-logo.png)
+![Logo]()
 
 ## Some Screenshots
 Home page of Porter:
@@ -73,14 +52,14 @@ Home page of Porter:
 - By simply clicking on the name of page you can head to that page
 - Fill-up the form to get estimate
 
-![App Screenshot](https://github.com/dheerajbisht362/constructWeekPorterClone/blob/master/images/0001.JPG)
+![App Screenshot]()
 
 Home page of Porter:
 - User attractive Info bar
 - click on the vehical of your choice to get detailed information
 - image will change color on clicking 
 
-![App Screenshot](https://github.com/dheerajbisht362/constructWeekPorterClone/blob/master/images/0002.JPG)
+![App Screenshot]()
 
 
 
