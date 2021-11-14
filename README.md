@@ -110,5 +110,5 @@ created signup pop-up.
 worked in Backend
 
 ## Thank You!
-This is our very first project Thank you so much for visiting, we would really like to know your reviews and suggestions.
+This is our very first React project Thank you so much for visiting, we would really like to know your reviews and suggestions.
 Thank you...!  
