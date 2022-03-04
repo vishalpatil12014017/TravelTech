@@ -26,7 +26,7 @@ This Web-app is made using:
 - Bootstrap
 - MongoDB - Atlas
 - Node.js
-- Express
+- Express.js
 - Mongoose
 
 ## Features
